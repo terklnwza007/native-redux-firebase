@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const INIT_DATA = [
-    { id: 1, task: 'Play with cat' },
-    { id: 2, task: 'Yoga' },
-    { id: 3, task: 'Teaching' },
+    // { id: 1, task: 'Play with cat' },
+    // { id: 2, task: 'Yoga' },
+    // { id: 3, task: 'Teaching' },
 ]
 
 const todosSlice = createSlice({
@@ -14,8 +14,8 @@ const todosSlice = createSlice({
         addTodo(state, action) {
             console.log(`Action = ${action.type}`)
             console.log(`Payload = ${action.payload}`)
-            const lastID = Math.max(...state.map(todo => todo.id))
-            state.push({ id: lastID + 1, task: action.payload })
+            // const lastID = Math.max(...state.map(todo => todo.id))
+            state.push({ id: action.payload.id, task: action.payload.task })
         },
         editTodo(state, action) {
             state.find((obj) => {
